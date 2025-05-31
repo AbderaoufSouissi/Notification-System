@@ -2,26 +2,16 @@ package com.ars.notification_system.dto;
 
 
 public class EmailRequest {
-    private String senderEmail;
     private String recipientEmail;
     private String message;
     private String subject;
 
     protected EmailRequest() {}
 
-    public EmailRequest(String senderEmail, String recipientEmail, String message, String subject) {
-        this.senderEmail = senderEmail;
+    public EmailRequest(String recipientEmail, String message, String subject) {
         this.recipientEmail = recipientEmail;
         this.message = message;
         this.subject = subject;
-    }
-
-    public String getSenderEmail() {
-        return senderEmail;
-    }
-
-    public void setSenderEmail(String senderEmail) {
-        this.senderEmail = senderEmail;
     }
 
     public String getRecipientEmail() {

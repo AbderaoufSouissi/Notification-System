@@ -1,10 +1,19 @@
 package com.ars.notification_system.dto;
 
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 public class EmailRequest {
+    @NotBlank
+    @Email
     private String recipientEmail;
-    private String message;
+
+    @NotBlank
     private String subject;
+
+    @NotBlank
+    private String message;
 
     protected EmailRequest() {}
 

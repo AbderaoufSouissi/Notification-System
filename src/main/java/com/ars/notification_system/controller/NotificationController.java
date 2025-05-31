@@ -3,6 +3,7 @@ package com.ars.notification_system.controller;
 import com.ars.notification_system.dto.EmailRequest;
 import com.ars.notification_system.exception.EmailNotSentException;
 import com.ars.notification_system.service.EmailSenderService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class NotificationController {
         this.emailSenderService = emailSenderService;
     }
     @PostMapping("/send")
-    public ResponseEntity<?> sendMessage(@RequestBody EmailRequest request){
+    public ResponseEntity<?> sendMessage(@RequestBody @Valid EmailRequest request){
         try{
             emailSenderService.sendEmail(request);
             return ResponseEntity.ok().build();
